@@ -1,3 +1,35 @@
 page-signup {
-
+  #cover{
+    background: url('../assets/img/bit.jpg') no-repeat center fixed;
+    background-size: cover;
+  }
+  ion-card{
+    color: #488aff !important;
+  }
+  ion-content{
+    *::-webkit-input-placeholder {
+      color: #fff !important;
+    }
+    *:-moz-placeholder {
+      color: #fff !important;
+    }
+    *:-ms-input-placeholder { /* IE10+ */
+      color: #fff !important;
+    }
+    .label {
+      color: #fff !important;
+    }
+    p {
+      color: #fff;
+    }
+    .item-md{
+      background-color: transparent;
+    }
+    .color{
+      color: #aceace
+    }
+    input, select, textarea{
+      color: #aceace;
+  }
+  }
 }

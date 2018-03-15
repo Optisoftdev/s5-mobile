@@ -4,6 +4,9 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
 
 import { User } from '../../providers/providers';
 import { MainPage } from '../pages';
+import { HomePage } from '../home/home';
+//import { TabsPage } from '../tabs/tabs';
+import {HomePageModule} from "../home/home.module";
 
 @IonicPage()
 @Component({
@@ -31,7 +34,9 @@ export class LoginPage {
       this.loginErrorString = value;
     })
   }
-
+login(){
+  this.navCtrl.setRoot('TabsPage');
+}
   // Attempt to login in through our User service
   doLogin() {
     this.user.login(this.account).subscribe((resp) => {

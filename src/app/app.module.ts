@@ -13,7 +13,24 @@ import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/providers';
 import { User } from '../providers/providers';
 import { Api } from '../providers/providers';
+import { HomePage } from '../pages/home/home';
+
+import { ChatPageModule } from '../pages/chat/chat.module';
+
 import { MyApp } from './app.component';
+import {HomePageModule} from "../pages/home/home.module";
+
+import {LoginPage} from "../pages/login/login";
+
+
+import {WelcomePage} from "../pages/welcome/welcome";
+// import { TabsPage } from '../pages/tabs/tabs';
+import { TabsPageModule } from '../pages/tabs/tabs.module';
+
+//import {SupportPage} from "../pages/support/support";
+//import {ChatBubble} from "../pages/components/chatBubble/chatBubble";
+
+
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -38,7 +55,13 @@ export function provideSettings(storage: Storage) {
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+
+
+    WelcomePage,
+    // TabsPage,
+
+
   ],
   imports: [
     BrowserModule,
@@ -55,7 +78,11 @@ export function provideSettings(storage: Storage) {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+   // TabsPage,
+    WelcomePage,
+
+
   ],
   providers: [
     Api,
@@ -64,6 +91,11 @@ export function provideSettings(storage: Storage) {
     Camera,
     SplashScreen,
     StatusBar,
+    ChatPageModule,
+    HomePageModule,
+
+    TabsPageModule,
+
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler }

@@ -4,6 +4,7 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
 
 import { User } from '../../providers/providers';
 import { MainPage } from '../pages';
+import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
@@ -31,6 +32,12 @@ export class SignupPage {
     this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
       this.signupErrorString = value;
     })
+  }
+signup(){
+    this.navCtrl.setRoot(LoginPage);
+  }
+  create(){
+    this.navCtrl.setRoot(LoginPage);
   }
 
   doSignup() {
