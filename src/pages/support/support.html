@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="danger">
-    <ion-title>Support</ion-title>
+    <ion-title>Chats</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,8 +16,8 @@
 <ion-content #content padding class="chatPage">
 
     <ion-list no-lines>
-      <ion-item  >
-        <chat-bubble message="Satoseries"></chat-bubble>
+      <ion-item *ngFor="let msg of messages" >
+        <chat-bubble [message]="msg"></chat-bubble>
       </ion-item>
     </ion-list>
 
@@ -34,7 +34,7 @@
       </ion-item>
 
       <ion-buttons right>
-        <button ion-button style="min-width:45px;" (click)="sendMessage()">
+        <button ion-button style="min-width:45px;" (click)="sendSupport()">
           <ion-icon name="send"></ion-icon>
         </button>
       </ion-buttons>

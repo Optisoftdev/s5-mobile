@@ -27,8 +27,8 @@ import {WelcomePage} from "../pages/welcome/welcome";
 // import { TabsPage } from '../pages/tabs/tabs';
 import { TabsPageModule } from '../pages/tabs/tabs.module';
 
-//import {SupportPage} from "../pages/support/support";
-//import {ChatBubble} from "../pages/components/chatBubble/chatBubble";
+import {SupportPage} from "../pages/support/support";
+import {ChatBubble} from "../pages/components/chatBubble/chatBubble";
 
 
 
@@ -56,6 +56,8 @@ export function provideSettings(storage: Storage) {
 @NgModule({
   declarations: [
     MyApp,
+    SupportPage,
+    ChatBubble,
 
 
     WelcomePage,
@@ -81,6 +83,10 @@ export function provideSettings(storage: Storage) {
     MyApp,
    // TabsPage,
     WelcomePage,
+    SupportPage,
+
+    ChatBubble,
+
 
 
   ],

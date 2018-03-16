@@ -6,14 +6,15 @@ import { Component } from '@angular/core';
   template:
   `
   <div class="chatBubble">
-    <div class="chat-bubble {{msg.sender}}">
-      <div class="message">{{msg.message}}</div>
-      <div class="message-detail">
-          <span style="font-weight:bold;">{{msg.username}} </span>,
-          <span class="bdate">{{msg.created_at}}</span>
-      </div>
+  <img class="profile-pic {{msg.position}}" src="{{msg.image}}">
+  <div class="chat-bubble {{msg.position}}">
+    <div class="message">{{msg.message}}</div>
+    <div class="message-detail">
+        <span style="font-weight:bold;">{{msg.senderName}} </span>
+        <span>{{msg.time}}</span>
     </div>
   </div>
+</div>
   `
 })
 export class ChatBubble {

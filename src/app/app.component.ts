@@ -7,7 +7,7 @@ import { Config, Nav, Platform } from 'ionic-angular';
 import { FirstRunPage } from '../pages/pages';
 import { HomePage } from '../pages/home/home';
 import { ChatPage } from '../pages/chat/chat';
-//import {SupportPage} from "../pages/support/support";
+import {SupportPage} from "../pages/support/support";
 import { Settings } from '../providers/providers';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -53,17 +53,11 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-
-
-
-
+    { title: 'home', component: 'TabsPage',name:"home" },
     { title: 'Chats', component: 'ChatPage',name:"chatboxes" },
-    { title: 'Login', component: 'LoginPage',name:"log-in" },
-    { title: 'Signup', component: 'SignupPage',name:"log-out" },
-
     { title: 'Menu', component: 'MenuPage',name:"menu" },
-
-    { title: 'home', component: 'TabsPage',name:"home" }
+    { title: 'Login', component: 'LoginPage',name:"log-in" },
+    { title: 'Signup', component: 'SignupPage',name:"log-out" }
   ]
 
 
@@ -103,9 +97,9 @@ export class MyApp {
       this.config.set('ios', 'backButtonText', values.BACK_BUTTON_TEXT);
     });
   }
-  //support(){
-    //this.nav.setRoot(SupportPage);
-  //}
+  support(){
+    this.nav.push(SupportPage);
+  }
 logout(){
   this.nav.setRoot(WelcomePage);
 }

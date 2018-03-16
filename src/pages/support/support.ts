@@ -2,7 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 
 
-import {ChatBubble} from '../components/chatBubble/ch';
+import {ChatBubble} from '../components/chatBubble/chatBubble';
 /**
  * Generated class for the SupportPage page.
  *
@@ -12,7 +12,7 @@ import {ChatBubble} from '../components/chatBubble/ch';
 @Component({
   selector: 'page-support',
   templateUrl: 'support.html',
-  directives: any[ ChatBubble ],
+
   queries: {
     txtChat: new ViewChild('txtChat'),
     content: new ViewChild('content')
@@ -24,55 +24,31 @@ export class SupportPage {
   static get parameters() {
     return [[NavController], [NavParams]];
   }
-  public messages;
-  public username;
-  public message;
-  constructor(nav, navParams) {
-    this.nav = nav;
-    this.navParams = navParams;
+  public messages ;
 
-    this.contactName = this.navParams.get('contactName');
-
+  constructor(nav , navParams) {
     this.messages = [
       {
-        img: 'build/img/hugh.png',
+        image: 'assets/imgs/parent.png',
         position: 'left',
-        content: 'Hello from the other side.',
+        message: 'Hello from the other side.',
         senderName: 'Gregory',
         time: '28-Jun-2016 21:53'
       },
       {
-        img: 'build/img/hugh.png',
+        image: 'assets/imgs/parent.png',
         position: 'right',
-        content: 'Hi! How are?',
+        message: 'Hi! How are?',
         senderName: 'Me',
         time: '28-Jun-2016 21:55'
       },
       {
-        img: 'build/img/hugh.png',
+        image: 'assets/imgs/parent.png',
         position: 'left',
-        content: "This is some really long test that I'm writing here. Let's see how it wraps.",
+        message: "This is some really long test that I'm writing here. Let's see how it wraps.",
         senderName: 'Gregory',
         time: '28-Jun-2016 21:57'
       }
     ];
-  }
-
-  sendMessage(){
-    this.txtChat.setFocus();
-
-    this.messages.push({
-      img: 'build/img/hugh.png',
-      position: 'right',
-      content: this.txtChat.content,
-      senderName: 'Me',
-      time: new Date().toLocaleTimeString()
-    });
-
-    this.txtChat.clearInput();
-
-    setTimeout(() => {
-      this.content.scrollToBottom(300);//300ms animation speed
-    });
   }
 }

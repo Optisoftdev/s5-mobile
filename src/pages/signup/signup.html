@@ -30,44 +30,44 @@
   <form (ngSubmit)="signup()" #signupForm="ngForm">
     <ion-list stacked="">
 
-      <ion-item inset="">
+      <ion-item inset="" style=" background-color: transparent;">
         <ion-label>Username*</ion-label>
         <ion-input type="text" name="username" required  [(ngModel)]="user.username"></ion-input>
       </ion-item>
 
-      <ion-item inset="">
+      <ion-item inset="" style=" background-color: transparent;">
         <ion-label>Firstname*</ion-label>
         <ion-input type="text" name="firstName" required  [(ngModel)]="user.firstname"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item style=" background-color: transparent;">
         <ion-label>Lastname*</ion-label>
         <ion-input type="text" name="lastName" required  [(ngModel)]="user.lastname"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item style=" background-color: transparent;">
         <ion-label>Phone Number*</ion-label>
         <ion-input type="number" name="phoneNumber" required  [(ngModel)]="user.telephone"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <ion-item style=" background-color: transparent;">
         <ion-label>Contact Address</ion-label>
         <ion-input type="text" name="address"  [(ngModel)]="user.address"></ion-input>
       </ion-item>
 
 
 
-      <ion-item>
+      <ion-item style=" background-color: transparent;">
         <ion-label>Password*</ion-label>
         <ion-input name="password" type="password"  required
                    [(ngModel)]="user.password"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <ion-item style=" background-color: transparent;">
         <ion-label>Confirm Password*</ion-label>
         <ion-input type="password" name="confirmPassword"  required
                    [(ngModel)]="confirmPassword"></ion-input>
       </ion-item>
 
-      <ion-item *ngIf="verCode">
+      <ion-item *ngIf="verCode" style=" background-color: transparent;">
         <ion-label>Verification Code</ion-label>
         <ion-input type="text" name="myCode"  [(ngModel)]="myCode"></ion-input>
       </ion-item>
